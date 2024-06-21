@@ -19,12 +19,12 @@ export default function Landing() {
       const boxes = gsap.utils.toArray('.box');
       boxes.forEach((box) => {
         gsap.to(box, {
-          x: 100,
+          x: "5vh",
           rotation: 360,
           scrollTrigger: {
             trigger: box,
             start: 'bottom bottom',
-            end: 'top 20%',
+            end: 'top 8%',
             scrub: 0.5,
             // markers: true,
           },
@@ -46,8 +46,8 @@ export default function Landing() {
           <div className="cube__face bottom">GSAP</div>
         </div>
       </div>
-
-      <h6 className="landing-hola">Hola, soy</h6>
+<div className='landing-text-container'>
+      <p className="landing-hola">Hola, soy</p>
       <h5 className="landing-name">Victor</h5>
       <h2 className="landing-profession">Frontend Developer</h2>
       <h3 className="landing-location">Based in Berlin</h3>
@@ -63,6 +63,7 @@ export default function Landing() {
           <BehanceIcon className="landing-icon" />
         </a>
       </div>
+</div>
 
       <div className="buttons-container">
         <a href={resume} download="CV-Victor-Maragioglio" className="download-button">
@@ -73,14 +74,11 @@ export default function Landing() {
         </a>
       </div>
 
-      <div className="section flex-center column">
-        <h2>Basic ScrollTrigger Baby</h2>
-        <p>Scroll down to see the magic happen!!</p>
-      </div>
-      <div className="section flex-center column">
-        <div className="box gradient-blue">box</div>
-        <div className="box gradient-blue">box</div>
-        <div className="box gradient-blue">box</div>
+     
+      <div className="scroll-trigger-container">
+        <div className="box gradient-blue">Data Structures</div>
+        <div className="box gradient-blue">Algorithms</div>
+        <div className="box gradient-blue">Patterns</div>
       </div>
       <section className="section"></section>
     </section>

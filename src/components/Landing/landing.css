@@ -28,6 +28,12 @@ background-image: url("https://www.transparenttextures.com/patterns/low-contrast
   }
 }
 /* -------------------------------------------------------- */
+
+
+.landing-text-container{
+
+  width: 100%;
+}
 .landing-title {
   font-family: 'Orbitron', sans-serif;
   font-size: 5.2rem;
@@ -48,7 +54,7 @@ background-image: url("https://www.transparenttextures.com/patterns/low-contrast
 .landing-hola{
   /* background-color: violet; */
   margin-bottom: var(--spacing-sm);
-  font-size: var(--spacing-md);
+  font-size: var(--spacing-sm);
 }
 /* -------------------------------------------------------- */
 .landing-name{
@@ -203,4 +209,14 @@ background-image: url("https://www.transparenttextures.com/patterns/low-contrast
   to {
     transform: rotateX(360deg) rotateY(360deg);
   }
+}
+
+.scroll-trigger-container{
+  background-color: var(--secondary-color);
+  height: 80vh;
+}
+.box{
+  height: 100px;
+  width: 100px;
+  border: 2px solid var(--secondary-color);
 }
