@@ -1,0 +1,29 @@
+html {
+  font-size: 16px; /* Adjust to your preference */
+  font-family: 'Roboto', sans-serif; /* Change to your preferred font */
+  background-color:var(---tertiary-color)
+
+}
+
+:root {
+  --spacing-xxs: 0.25rem; /* 4px */
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2rem; /* 32px */
+  --spacing-xl: 3rem; /* 48px */
+  --spacing-xxl: 4rem; /* 64px */
+  --spacing-xxxl: 7rem; /* 128px */
+
+  --primary-color: #2fffd9b7;;
+  --secondary-color: #3993fa;;
+  --tertiary-color: #1a1a1a;
+
+  --width-sm:1200px;
+}
+.app-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
