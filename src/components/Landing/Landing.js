@@ -10,11 +10,29 @@ import lebenslauf from '../../assets/Victor_Maragioglio_Lebenslauf_2024.pdf';
 export default function Landing() {
   return (
     <section className="landing-container">
-      <h1 className="landing-title">portfolio</h1>
+
+
+<div class="container-animation">
+    <div class="cube">
+      <div class="cube__face front">JavaScript</div>
+      <div class="cube__face back">HTML</div>
+      <div class="cube__face left">CSS</div>
+      <div class="cube__face right">REACT</div>
+      <div class="cube__face top">SHOPIFY LIQUID</div>
+      <div class="cube__face bottom">GSAP</div>
+    </div>
+  </div>
+
+
+
+
+
+
+
       <h6 className="landing-hola">Hola, soy</h6>
       <h5 className="landing-name">Victor</h5>
-      <h2 className="landing-profession">Junior Frontend Developer</h2>
-      <h3 className="landing-location">Based in Germany</h3>
+      <h2 className="landing-profession">Frontend Developer</h2>
+      <h3 className="landing-location">Based in Berlin</h3>
 
       <div className="landing-icons-container">
         <a href="https://github.com/maragiogliov" target="_blank" rel="noreferrer">
@@ -27,7 +45,8 @@ export default function Landing() {
           <BehanceIcon className="landing-icon" />
         </a>
       </div>
-      <div className="buttons-container">
+
+     <div  className="buttons-container">
         <a href={resume} download="CV-Victor-Maragioglio" className="download-button">
           Download Resume
         </a>
@@ -35,6 +54,8 @@ export default function Landing() {
           Lebenslauf herunterladen       
         </a>
       </div>
+
+
     </section>
   );
 }          
