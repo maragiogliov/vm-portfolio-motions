@@ -1,114 +1,103 @@
-
-
-
-
-
-
-
-/* -------------------------------------------------------- */
-.projects-collaborations{
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    margin-top: var(--spacing-md);
-    color: rgb(255, 255, 255);
+/* General styles */
+.projects-collaborations {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  margin-top: var(--spacing-md);
+  color: rgb(255, 255, 255);
 }
-.projects-recent{
-    font-family: 'Roboto', sans-serif;
-    font-size: 40px;
-    margin-bottom: var(--spacing-md);
-    color: var(--secondary-color)
+
+.projects-recent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
+  margin-bottom: var(--spacing-md);
+  color: var(--secondary-color);
 }
+
 .projects-title {
-    font-size: var(--spacing-md);
-    color:var(--secondary-color);
-    font-family: 'Orbitron', sans-serif;
-    font-weight: bold;
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-md);
-  }
+  font-size: var(--spacing-md);
+  color: var(--secondary-color);
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+}
 
-/* -------------------------------------------------------- */
-  .card {
-    background-color: #000000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    padding: 16px;
-  
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+.card {
+  background-color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: var(--spacing-md);
+  transition: transform 0.9s ease;
+  max-width: 400px;
+}
 
-    margin-top: var(--spacing-md);
-    transition: transform 0.9s ease;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-    max-width: 400px;
+.card img {
+  height: auto;
+  min-height: 300px;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+}
 
-  }
-  .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  .card-text-container{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: left;
-  }
-  .project-description-container{
-    display: flex;
-    text-align: left;
-    min-height: 120px;
-  }
-  /* -------------------------------------------------------- */
-  .card img {
-    height: auto;
-    min-height: 300px;
-    width: 400px;
-    border-radius: 8px;
-    object-fit: cover;
-  }
-  /* -------------------------------------------------------- */
-  .card p {
-    margin: 0;
-    font-size: 16px;
-    color: #c9c9c9;
-  }
-  /* -------------------------------------------------------- */
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: right;
-    width: 100%;
-  }
-  .button {
-    background-color:none;
-    border: 2px solid rgb(255, 255, 255);
-    color: rgb(255, 255, 255);
-    padding: 12px 24px;
-    margin-bottom: var(--spacing-sm);
-    margin-left: 8px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  .button:hover {
-    background-color: var(--secondary-color);
-  }
-  /* General container styling */
+.card p {
+  margin: 0;
+  font-size: 16px;
+  color: #c9c9c9;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Adjusted to align buttons to the right */
+  width: 100%;
+}
+
+.button {
+  background-color: none;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  margin-bottom: var(--spacing-sm);
+  margin-left: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* Container and Section styles */
 .container-mvp {
   display: flex;
-  overflow: hidden;
+  overflow-x: auto; /* Ensure horizontal scroll if necessary */
+  scroll-snap-type: x mandatory; /* Snap to each card */
+  position: relative;
+  top:32px;
+  left:50%;
+border: 2px solid red;
+padding-left:4rem;
 }
 
 .inner-container-mvp {
   display: flex;
-  flex-direction: row;
   width: 100%;
+  scroll-snap-type: x mandatory; /* Snap to each card */
 }
 
 .section-mvp {
@@ -117,72 +106,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
   padding: 20px;
   box-sizing: border-box;
+  scroll-snap-align: start; /* Ensure cards snap to start of viewport */
+  width: 100%; /* Adjusted to ensure full width of viewport */
+  max-width: 400px; /* Adjust as necessary */
+  margin: 0 10px; /* Adjust margin between cards */
 }
-
-/* Card styling */
-.card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-.card-text-container {
-  text-align: center;
-}
-
-.project-description-container {
-  margin: 10px 0;
-}
-
-/* Chips container styling */
-.chips-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
-.chip {
-  padding: 5px 10px;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  background-color: #f1f1f1;
-  cursor: pointer; /* Ensure pointer cursor */
-}
-
-/* Button styling */
-.button-container {
-  margin-top: 10px;
-}
-
-.button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  margin: 5px;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-
 .background-scrolltrigger-bottom{
-  height: 450px;
-  width: 100%;
+  height: 500px;
 }
