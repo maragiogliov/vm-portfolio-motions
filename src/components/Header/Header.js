@@ -13,7 +13,9 @@ export default function Header() {
 
 
   useGSAP(()=>{
-    gsap.to('.box', { x: -90, ease: "bounce.out", ease:"back.in"}); 
+    gsap.to('.text-header', { x: -20,
+      ease: "bounce.out",
+      duration: 2,}); 
   });
 
   return (
@@ -22,9 +24,10 @@ export default function Header() {
         <span className="header-v-letter">v</span>.Portfolio
       </h1>
       
-      <p className='date-format'>Today: {formattedDate} - Time: {formattedTime}</p>
+
       
-      <div className="box" ref={container} >HOLA</div>
+      <div className="text-header" ref={container} >RESPIRA</div>
     </div>
   );
 }
+      /*<p className='date-format'>Today: {formattedDate} - Time: {formattedTime}</p>*/

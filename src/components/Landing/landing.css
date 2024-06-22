@@ -33,6 +33,7 @@ background-image: url("https://www.transparenttextures.com/patterns/low-contrast
 .landing-text-container{
 
   width: 100%;
+ 
 }
 .landing-title {
   font-family: 'Orbitron', sans-serif;
@@ -148,20 +149,19 @@ background-image: url("https://www.transparenttextures.com/patterns/low-contrast
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
-.container-animation {
-  box-sizing: border-box;
-  margin: 0;
-  font-family: "Roboto";
-  color: white;
-  font-size: 2rem;
-}
-.container-animation {
-  width: 200px;
-  height: 200px;
-  perspective: 1000px;
-  margin: 100px auto;
- border: var(--primary-color) 1px;
-}
+
+  .container-animation {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    margin: 100px auto;
+    border: var(--primary-color) 10px;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Roboto";
+  
+    font-size: 2rem;
+  }
 
 .cube {
   width: 100%;
@@ -212,11 +212,22 @@ background-image: url("https://www.transparenttextures.com/patterns/low-contrast
 }
 
 .scroll-trigger-container{
-  background-color: var(--secondary-color);
-  height: 80vh;
+
+  display: flex;
+  flex-direction: column-reverse;
+  border: 3px solid yellow;
+  z-index: 99999  ;
+  position: absolute;
+  left: 16px;
+  top:700px;
+}
+.gradient-blue{
+
+  display: flex;
+  flex-direction: column-reverse;
 }
 .box{
-  height: 100px;
+  height: 300px;
   width: 100px;
   border: 2px solid var(--secondary-color);
 }

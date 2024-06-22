@@ -19,14 +19,14 @@ export default function Landing() {
       const boxes = gsap.utils.toArray('.box');
       boxes.forEach((box) => {
         gsap.to(box, {
-          x: "5vh",
+          x: "1vh",
           rotation: 360,
           scrollTrigger: {
             trigger: box,
             start: 'bottom bottom',
-            end: 'top 8%',
+            end: 'top 1%',
             scrub: 0.5,
-            // markers: true,
+            //markers: true,
           },
         });
       });
@@ -46,6 +46,9 @@ export default function Landing() {
           <div className="cube__face bottom">GSAP</div>
         </div>
       </div>
+
+
+
 <div className='landing-text-container'>
       <p className="landing-hola">Hola, soy</p>
       <h5 className="landing-name">Victor</h5>
