@@ -142,9 +142,9 @@ export default function Projects() {
       scrollTrigger: {
         trigger: '.container-mvp',
         start: '35% 40%', // Ensures the animation starts immediately
-        end:'bottom 50%',
+        end:'bottom 40%',
         pin: true,
-        scrub: true,
+        scrub: 0.1,
         markers:true, 
        
 
