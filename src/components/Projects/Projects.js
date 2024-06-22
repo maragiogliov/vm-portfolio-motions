@@ -138,6 +138,7 @@ export default function Projects() {
       x: () => -(container.scrollWidth - window.innerWidth),
       ease: 'none', // Linear easing for constant speed
       duration: 4, // Adjust animation duration for quicker movement
+      
 
       scrollTrigger: {
         trigger: '.container-mvp',
@@ -146,6 +147,7 @@ export default function Projects() {
         pin: true,
         scrub: 0.1,
         markers:true, 
+        
        
 
       }
