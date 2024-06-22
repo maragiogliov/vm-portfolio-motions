@@ -77,6 +77,42 @@ const projects = [
     ]
   },
   {
+    name: 'CV DESSERTS',
+    description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
+    image: cvDesign,
+    technologies: [ 'Shopify', 'UI'],
+    buttons: [
+      {
+        text: 'Behance',
+        url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
+      }
+    ]
+  },
+  {
+    name: 'CV DESSERTS',
+    description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
+    image: cvDesign,
+    technologies: [ 'Shopify', 'UI'],
+    buttons: [
+      {
+        text: 'Behance',
+        url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
+      }
+    ]
+  },
+  {
+    name: 'CV DESSERTS',
+    description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
+    image: cvDesign,
+    technologies: [ 'Shopify', 'UI'],
+    buttons: [
+      {
+        text: 'Behance',
+        url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
+      }
+    ]
+  },
+  {
     name: 'MOTHERCODE',
     description: 'Our Educational Management App simplifies learning for DCI Berlin School students, enabling code visualization, learning tracking, and exercise management.',
     image: mothercode,
@@ -98,22 +134,24 @@ export default function Projects() {
   useEffect(() => {
     const container = document.querySelector('.container-mvp');
     const sections = gsap.utils.toArray('.section-mvp');
-
     gsap.to(sections, {
-      x: () => -1 * (container.scrollWidth - window.innerWidth),
-    
-      ease: 'power1.inOut',
+      x: () => -(container.scrollWidth - window.innerWidth),
+      ease: 'none', // Linear easing for constant speed
+      duration: 4, // Adjust animation duration for quicker movement
+
       scrollTrigger: {
         trigger: '.container-mvp',
+        start: '35% 40%', // Ensures the animation starts immediately
+        end:'bottom 50%',
         pin: true,
-        pinSpacing: true,
-        scrub: 1.5,
-        start: 'center center',
-        end: () => '+=' + (container.scrollWidth - window.innerWidth),
-        markers: true,
-        invalidateOnRefresh: true // invalidate and recalcalculate functional values on resize
+        scrub: true,
+        markers:true, 
+       
+
       }
     });
+    
+    
   }, []);
 
   return (
@@ -153,6 +191,7 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      <section className='background-scrolltrigger-bottom'></section>
     </>
   );
 }
