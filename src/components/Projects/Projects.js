@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
 import './Projects.css';
 import imageSrc from '../../assets/Frame 32.jpg';
-import cvDesign from '../../assets/xvcwebsite.png'
-import mothercode from '../../assets/mothercode.png'
-import greenhousecalculator from '../../assets/greenhousecalculator.png'
-import vportfolio from '../../assets/v-portfolio.png'
-import thebarn from '../../assets/3-devices-black.png'
+import cvDesign from '../../assets/xvcwebsite.png';
+import mothercode from '../../assets/mothercode.png';
+import greenhousecalculator from '../../assets/greenhousecalculator.png';
+import vportfolio from '../../assets/v-portfolio.png';
+import thebarn from '../../assets/3-devices-black.png';
 
+gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
@@ -67,7 +70,6 @@ const projects = [
     image: cvDesign,
     technologies: [ 'Shopify', 'UI'],
     buttons: [
-  
       {
         text: 'Behance',
         url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
@@ -93,78 +95,64 @@ const projects = [
 ];
 
 export default function Projects() {
-  const [selectedTechnology, setSelectedTechnology] = useState(null);
+  useEffect(() => {
+    const container = document.querySelector('.container-mvp');
+    const sections = gsap.utils.toArray('.section-mvp');
 
-  const handleChipClick = (technology) => {
-    setSelectedTechnology(technology);
-  };
-
-  const filteredProjects = selectedTechnology === 'All'
-    ? projects
-    : selectedTechnology
-    ? projects.filter((project) =>
-        project.technologies.includes(selectedTechnology)
-      )
-    : projects;
-
-  const allTechnologies = projects.reduce(
-    (acc, project) => [...acc, ...project.technologies],
-    []
-  );
-  const uniqueTechnologies = ['All', ...Array.from(new Set(allTechnologies))];
+    gsap.to(sections, {
+      x: () => -1 * (container.scrollWidth - window.innerWidth),
+    
+      ease: 'power1.inOut',
+      scrollTrigger: {
+        trigger: '.container-mvp',
+        pin: true,
+        pinSpacing: true,
+        scrub: 1.5,
+        start: 'center center',
+        end: () => '+=' + (container.scrollWidth - window.innerWidth),
+        markers: true,
+        invalidateOnRefresh: true // invalidate and recalcalculate functional values on resize
+      }
+    });
+  }, []);
 
   return (
-    <div className='project-container'>
-
-        <h4 className='projects-collaborations'>Collaborations</h4>
-        <h1 className='projects-recent'>Recent Projects</h1>
-        <div className='chips-container-top'>
-          {uniqueTechnologies.map((technology, index) => (
-            <div
-              key={index}
-              className={`chip-top ${
-                technology === selectedTechnology ? 'active' : ''
-              }`}
-              onClick={() => handleChipClick(technology)}
-            >
-              {technology}
+    <>
+      <div className='container-mvp'>
+        <div className='inner-container-mvp'>
+          {projects.map((project, index) => (
+            <div className='section-mvp card' key={index}>
+              <img src={project.image} alt={project.name} />
+              <div className='card-text-container'>
+                <h2 className='projects-title '>{project.name}</h2>
+                <div className='project-description-container'>
+                  <p>{project.description}</p>
+                </div>
+                <div className='chips-container'>
+                  {project.technologies.map((technology, index) => (
+                    <div key={index} className='chip'>
+                      {technology}
+                    </div>
+                  ))}
+                </div>
+                <div className='button-container'>
+                  {project.buttons.map((button, index) => (
+                    <a
+                      key={index}
+                      href={button.url}
+                      className='button'
+                      target='_blank'
+                      rel='noopener noreferrer'
+                    >
+                      {button.text}
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           ))}
         </div>
-      <div className='cards-container'>
-        {filteredProjects.map((project, index) => (
-          <div className='card' key={index}>
-            <img src={project.image} alt={project.name} />
-            <div className='card-text-container'> 
-            
-            <h2 className='projects-title '>{project.name}</h2>
-            <div className='project-description-container'> 
-              <p>{project.description}</p>
-            </div>
-            <div className='chips-container'>
-              {project.technologies.map((technology, index) => (
-                <div key={index} className='chip'>
-                  {technology}
-                </div>
-              ))}
-            </div>
-            </div>
-            <div className='button-container'>
-              {project.buttons.map((button, index) => (
-                <a
-                  key={index}
-                  href={button.url}
-                  className='button'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                >
-                  {button.text}
-                </a>
-              ))}
-            </div>
-          </div>
-        ))}
       </div>
-    </div>
+    </>
   );
 }
