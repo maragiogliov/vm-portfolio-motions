@@ -20,11 +20,14 @@ html {
   --tertiary-color: #1a1a1a;
 
   --width-sm:1200px;
+  margin-left: 2rem;
+  margin-right: 2rem;
+
 }
 .app-container{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+
 }

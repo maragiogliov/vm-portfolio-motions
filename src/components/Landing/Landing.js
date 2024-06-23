@@ -1,89 +1,47 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './landing.css';
-import { ReactComponent as BehanceIcon } from '../../assets/behance-icon.svg';
-import { ReactComponent as GithubIcon } from '../../assets/github-icon.svg';
-import { ReactComponent as LinkedinIcon } from '../../assets/linkedin-icon.svg';
-import resume from '../../assets/Victor_Maragioglio_Resume_2024.pdf';
-import lebenslauf from '../../assets/Victor_Maragioglio_Lebenslauf_2024.pdf';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useGSAP } from '@gsap/react';
-
-gsap.registerPlugin(ScrollTrigger);
+import horizontalLoop from "../../assets/seamless-scroll";
 
 export default function Landing() {
-  const main = useRef();
+  const wrapperRef = useRef(null);
+  const boxesRef = useRef([]);
 
-  useGSAP(
-    () => {
-      const boxes = gsap.utils.toArray('.box');
-      boxes.forEach((box) => {
-        gsap.to(box, {
-          x: "1vh",
-          rotation: 360,
-          scrollTrigger: {
-            trigger: box,
-            start: 'bottom bottom',
-            end: 'top 1%',
-            scrub: 0.5,
-            //markers: true,
-          },
-        });
+  useEffect(() => {
+    const boxes = boxesRef.current;
+    const colors = ["#f5f5f5"]
+
+    if (boxes.length > 0) {
+      gsap.set(boxes, {
+        backgroundColor: gsap.utils.wrap(colors)
       });
-    },
-    { scope: main }
-  );
+
+      const loop = horizontalLoop(boxes, { paused: false, repeat: -1, speed: 1 });
+
+      boxes.forEach((boxtest, i) => {
+        boxtest.addEventListener("click", () => loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" }));
+      });
+    }
+  }, []);
 
   return (
-    <section ref={main} className="landing-container">
-      <div className="container-animation">
-        <div className="cube">
-          <div className="cube__face front">JavaScript</div>
-          <div className="cube__face back">HTML</div>
-          <div className="cube__face left">CSS</div>
-          <div className="cube__face right">REACT</div>
-          <div className="cube__face top">SHOPIFY LIQUID</div>
-          <div className="cube__face bottom">GSAP</div>
+    <section className="landing-container">
+      <nav className='nav-container-landing'>
+        <div className="landing-hola">© Code by Victor Maragioglio</div>
+        <div className='hambu-container'>
+          <div className="landing-hola">Work</div>
+          <div className="landing-hola">About</div>
+          <div className="landing-hola">Contact</div>
         </div>
-      </div>
-
-
-
-<div className='landing-text-container'>
-      <p className="landing-hola">Hola, soy</p>
-      <h5 className="landing-name">Victor</h5>
-      <h2 className="landing-profession">Frontend Developer</h2>
-      <h3 className="landing-location">Based in Berlin</h3>
-
-      <div className="landing-icons-container">
-        <a href="https://github.com/maragiogliov" target="_blank" rel="noreferrer">
-          <GithubIcon className="landing-icon" />
-        </a>
-        <a href="https://www.linkedin.com/in/victor-maragioglio-ba3073214/" target="_blank" rel="noreferrer">
-          <LinkedinIcon className="landing-icon" />
-        </a>
-        <a href="https://www.behance.net/vmaragioglio" target="_blank" rel="noreferrer">
-          <BehanceIcon className="landing-icon" />
-        </a>
-      </div>
-</div>
-
-      <div className="buttons-container">
-        <a href={resume} download="CV-Victor-Maragioglio" className="download-button">
-          Download Resume
-        </a>
-        <a href={lebenslauf} download="CV-Victor-Maragioglio" className="download-button">
-          Lebenslauf herunterladen       
-        </a>
-      </div>
-
-     
-      <div className="scroll-trigger-container">
-        <div className="box gradient-blue">Data Structures</div>
-        <div className="box gradient-blue">Algorithms</div>
-        <div className="box gradient-blue">Patterns</div>
-      </div>
-      <section className="section"></section>
+        <div className='hambu-container-mobile'>
+          <div className="landing-hola">• Menu</div>
+        </div>
+      </nav>
+        <div ref={wrapperRef} className="wrapper">
+          <div ref={el => boxesRef.current[0] = el} className="boxtest">VICTOR</div>
+          <div ref={el => boxesRef.current[1] = el} className="boxtest">MARAGIOGLIO</div>
+    
+        </div>
     </section>
   );
 }
