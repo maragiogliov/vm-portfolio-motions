@@ -48,18 +48,35 @@ export default function Landing() {
     
         </div>
         <section className="label-text">
+                <section>
+                      <svg className="flecha-icon" width="20" height="20" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="13" y="45" width="38" height="6" fill="black"/>
+                        <rect x="51" y="13" width="38" height="6" transform="rotate(90 51 13)" fill="black"/>
+                        <rect x="4.67915" y="0.436523" width="65.6669" height="6" transform="rotate(45 4.67915 0.436523)" fill="black"/>
+                      </svg>
 
-        <svg className="flecha-icon" width="20" height="20" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="13" y="45" width="38" height="6" fill="black"/>
-          <rect x="51" y="13" width="38" height="6" transform="rotate(90 51 13)" fill="black"/>
-          <rect x="4.67915" y="0.436523" width="65.6669" height="6" transform="rotate(45 4.67915 0.436523)" fill="black"/>
-        </svg>
+                      <div> Freelance </div>
+                      <div> Designer & Developer </div>
+                </section>
 
+                <section className="container-globo">
 
-                <div> Freelance </div>
-                <div> Designer & Developer </div>
-
+                    <svg class="globe" viewBox="0 0 100 100">
+                        <circle class="wireframe" cx="50" cy="50" r="48"></circle>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="24"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="12"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="6"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="48" transform="rotate(30 50 50)"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="48" transform="rotate(60 50 50)"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="48" transform="rotate(90 50 50)"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="48" transform="rotate(120 50 50)"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="48" transform="rotate(150 50 50)"></ellipse>
+                        <ellipse class="wireframe" cx="50" cy="50" rx="48" ry="48" transform="rotate(180 50 50)"></ellipse>
+                    </svg>
+                </section>
         </section>
+
+
     </section>
   );
 }
