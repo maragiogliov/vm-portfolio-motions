@@ -1,7 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import './landing.css';
 import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import horizontalLoop from "../../assets/seamless-scroll";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Landing() {
   const wrapperRef = useRef(null);
@@ -22,6 +25,24 @@ export default function Landing() {
         boxtest.addEventListener("click", () => loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" }));
       });
     }
+     // GSAP animation with ScrollTrigger
+     gsap.fromTo(boxes, {
+      opacity: 0,
+    
+      }, {
+      opacity: 1,
+      y: 0,
+      stagger: 0.2,
+      duration: 1,
+      scrollTrigger: {
+        trigger: wrapperRef.current,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        scrub: true
+      }
+    });
+
+
   }, []);
 
   return (
