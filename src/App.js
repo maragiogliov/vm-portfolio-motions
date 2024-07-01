@@ -1,27 +1,44 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 
 import './App.css';
 import Landing from './components/Landing/Landing';
 import About from './components/About/About';
-import Projects from '../src/components/Projects/Projects';
+import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
-import Footer from './components/Footer/Footer';
-import Archive from './components/Archive/Archive'; // Import the new Archive component
+import Archive from './components/Archive/Archive';
+import Splash from './components/Splash/Splash';
+
+const AppContent = () => {
+  const location = useLocation();
+  const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    setShowSplash(true);
+  }, [location]);
+
+  return (
+    <>
+      {showSplash && <Splash setShowSplash={setShowSplash} />}
+      {!showSplash && (
+        <div className='app-container'>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/archive" element={<Archive />} />
+          </Routes>
+        </div>
+      )}
+    </>
+  );
+};
 
 function App() {
   return (
     <Router>
-      <div className='app-container'>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/archive" element={<Archive />} /> {/* Add this line */}
-        </Routes>
-    
-      </div>
+      <AppContent />
     </Router>
   );
 }
