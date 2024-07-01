@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import './Splash.css'; // Import your Splash CSS for styling
+import './Splash.css'; // Ensure Splash.css includes appropriate styles for your splash animation
 
 const Splash = ({ setShowSplash }) => {
   const splashRef = useRef(null);
@@ -8,7 +8,10 @@ const Splash = ({ setShowSplash }) => {
   useEffect(() => {
     const timeline = gsap.timeline({ onComplete: () => setShowSplash(false) });
 
-    // Animation to fade in the splash screen
+    // Ensure splash starts with the correct background color
+    gsap.set(splashRef.current, { backgroundColor: '#141414' });
+
+    // Animation to fade in the splash screen from the dark grey color
     timeline.to(splashRef.current, {
       duration: 1,
       opacity: 1,
@@ -20,17 +23,17 @@ const Splash = ({ setShowSplash }) => {
       duration: 1,
       height: 0,
       ease: 'power2.inOut',
-      delay: 1,
-      onComplete: () => setShowSplash(false), // Set showSplash to false after animation completes
+      delay: 1, // Delay after initial animation
     });
 
     return () => {
-      timeline.kill(); // Ensure animation cleanup
+      timeline.kill();
     };
   }, [setShowSplash]);
 
   return (
     <div className="splash" ref={splashRef}>
+      {/* Add your splash content here */}
       <h1>Welcome</h1>
     </div>
   );

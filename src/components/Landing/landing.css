@@ -1,13 +1,12 @@
 
 
-.landing-container{
-  opacity: 0; /* Add this line to hide the landing initially */
-
+.landing-container {
+  opacity: 0; /* Initially hide the landing content */
   height: 120vh;
   background-color: #f5f5f5;
   width: 100%;
   overflow-x: hidden;
-
+  transition: opacity 1s; /* Optional: add a transition for a smoother effect */
 }
 
 .nav-container-landing{
