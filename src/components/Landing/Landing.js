@@ -21,9 +21,6 @@ export default function Landing() {
 
       const loop = horizontalLoop(boxes, { paused: false, repeat: -1, speed: 0.8  });
 
-      boxes.forEach((boxtest, i) => {
-        boxtest.addEventListener("click", () => loop.toIndex(i, { duration: 0.8, ease: "power1.inOut" }));
-      });
     }
      // GSAP animation with ScrollTrigger
      gsap.fromTo(boxes, {
