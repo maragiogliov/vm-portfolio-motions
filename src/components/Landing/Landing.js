@@ -48,7 +48,7 @@ export default function Landing() {
   return (
     <section className="landing-container">
       <nav className='nav-container-landing'>
-        <div className="landing-hola">© Code by Victor Maragioglio</div>
+        <div className="landing-hola">© Code by Victor</div>
         <div className='hambu-container'>
           <div className="landing-hola">Work</div>
           <div className="landing-hola">About</div>
