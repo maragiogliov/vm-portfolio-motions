@@ -1,11 +1,14 @@
 import React from "react";
 import './Contact.css';
+import Header from '../Header/Header'
 
 
 const Contact = () => {
 
   return (
     <>
+              <Header />
+
       <section className="contact-container-form">
         <h4>Let's build something together</h4>
         <h1 className="contact-me">Contact Me</h1>

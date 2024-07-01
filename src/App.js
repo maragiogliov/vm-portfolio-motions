@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import './App.css';
 import Landing from './components/Landing/Landing';
 import About from './components/About/About';
-import Projects from './components/Projects/Projects';
+import Work from './components/Work/Work';
 import Contact from './components/Contact/Contact';
 import Archive from './components/Archive/Archive';
 import Splash from './components/Splash/Splash';
@@ -25,7 +25,7 @@ const AppContent = () => {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/work" element={<Work />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/archive" element={<Archive />} />
           </Routes>

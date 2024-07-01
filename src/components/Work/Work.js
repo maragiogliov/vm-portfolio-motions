@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import './Projects.css';
+import './Work.css';
 import imageSrc from '../../assets/Frame 32.jpg';
 import cvDesign from '../../assets/xvcwebsite.png';
 import mothercode from '../../assets/mothercode.png';
 import greenhousecalculator from '../../assets/greenhousecalculator.png';
 import vportfolio from '../../assets/v-portfolio.png';
 import thebarn from '../../assets/3-devices-black.png';
+import Header from '../Header/Header'
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -130,7 +131,7 @@ const projects = [
   }
 ];
 
-export default function Projects() {
+export default function Work() {
   useEffect(() => {
     const container = document.querySelector('.container-mvp');
     const sections = gsap.utils.toArray('.section-mvp');
@@ -157,6 +158,8 @@ export default function Projects() {
 
   return (
     <>
+          <Header />
+
       <div className='container-mvp'>
         <div className='inner-container-mvp'>
           {projects.map((project, index) => (

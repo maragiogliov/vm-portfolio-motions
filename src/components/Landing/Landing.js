@@ -3,6 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import horizontalLoop from '../../assets/seamless-scroll';
 import './landing.css';
+import Header from '../Header/Header';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,17 +60,7 @@ const Landing = () => {
 
   return (
     <section className="landing-container" ref={landingRef}>
-      <nav className="nav-container-landing">
-        <div className="landing-hola">© Code by Victor</div>
-        <div className="hambu-container">
-          <div className="landing-hola">Work</div>
-          <div className="landing-hola">About</div>
-          <div className="landing-hola">Contact</div>
-        </div>
-        <div className="hambu-container-mobile">
-          <div className="landing-hola">• Menu</div>
-        </div>
-      </nav>
+      <Header />
       <div className="wrapper" ref={wrapperRef}>
         <div ref={(el) => (boxesRef.current[0] = el)} className="boxtest">
           Victor

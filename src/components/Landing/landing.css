@@ -9,38 +9,7 @@
   transition: opacity 1s; /* Optional: add a transition for a smoother effect */
 }
 
-.nav-container-landing{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 2rem;
-  width: calc(100vw - 4rem);
-}
 
-.hambu-container{
-  display: flex;
-  flex-direction: row;
-}
-
-
-.hambu-container .landing-hola{
-margin-left:2rem;
-}
-
-@media (width <= 540px) {
-
-  .hambu-container{
-    display: none;
-  }
-}
-
-@media (width >= 540px) {
-
-
-  .hambu-container-mobile{
-    display: none;
-  }
-}
 
 
 .wrapper {

@@ -1,0 +1,104 @@
+.nav-container-landing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 2rem;
+  width: calc(100vw - 4rem);
+}
+
+.hambu-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.hambu-container .landing-hola {
+  margin-left: 2rem;
+
+}
+
+.hambu-container-mobile {
+  display: none;
+}
+
+.side-nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #141414;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  z-index: 9999;
+  overflow: hidden;
+  
+}
+
+.links-pages{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.social-media{
+  position: absolute;
+  bottom: 3rem;
+  width: calc(100vw - 4rem);
+
+}
+
+.social-media-links{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  
+}
+
+.description-content{
+  margin-bottom: 3rem;
+}
+.description-content p{
+  font-size: 12px;
+  color: grey;
+}
+.hr-class{
+  margin-top:0.8rem;
+  border-top:1px solid grey;
+ }
+.social-media-links .social-link{
+  margin-right: 2rem;
+
+}
+
+.side-nav-link {
+  margin-bottom: 0.8rem;
+  text-decoration: none;
+  color: white;
+  font-size: 38px;
+}
+
+@media (max-width: 540px) {
+  .hambu-container {
+    display: none;
+  }
+  .hambu-container-mobile {
+    display: block;
+  }
+}
+.close-btn{
+
+  position: absolute;
+  right: 1.6rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 100px;
+  background-color: rgb(61, 61, 231);
+  color:white;
+}
