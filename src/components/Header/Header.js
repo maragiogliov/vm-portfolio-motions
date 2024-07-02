@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import gsap from 'gsap';
 import './Header.css';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const sideNavRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -10,6 +12,7 @@ export const Header = () => {
 
   useEffect(() => {
     if (isOpen) {
+      gsap.to(sideNavRef.current, { x: 0, duration: 0.5, ease: 'power3.out' });
       document.body.style.overflow = 'hidden';
       document.body.style.position = 'fixed';
       document.body.style.width = '100%';
@@ -19,6 +22,7 @@ export const Header = () => {
       document.documentElement.style.width = '100%';
       document.documentElement.style.height = '100%';
     } else {
+      gsap.to(sideNavRef.current, { x: '100%', duration: 0.5, ease: 'power3.in' });
       document.body.style.overflow = 'auto';
       document.body.style.position = '';
       document.body.style.width = '';
@@ -41,40 +45,32 @@ export const Header = () => {
       <div className="hambu-container-mobile" onClick={toggleMenu}>
         <div className="landing-hola">• Menu</div>
       </div>
-      {isOpen && (
-        <div className="side-nav">
-          <div className="close-btn" onClick={toggleMenu}>X</div>
+      <div className="side-nav" ref={sideNavRef}>
+        <div className="close-btn" onClick={toggleMenu}>X</div>
 
-          <div className='links-pages'>
-            <div className='description-content'>
-              <p>NAVIGATION</p>
-              <hr className='hr-class'></hr>
-            </div>
-
-                    <a href="/" className="side-nav-link" onClick={toggleMenu}>Home</a>
-                    <a href="/work" className="side-nav-link" onClick={toggleMenu}>Work</a>
-                    <a href="/about" className="side-nav-link" onClick={toggleMenu}>About</a>
-                    <a href="/contact" className="side-nav-link" onClick={toggleMenu}>Contact</a>
-          </div>
-
-
-       
-          <div className='social-media'>
-
+        <div className='links-pages'>
           <div className='description-content'>
-              <p>SOCIALS</p>
-              <hr className='hr-class'></hr>
+            <p>NAVIGATION</p>
+            <hr className='hr-class'></hr>
           </div>
-
-          <div  className="social-media-links">
+          <a href="/" className="side-nav-link" onClick={toggleMenu}>Home</a>
+          <a href="/work" className="side-nav-link" onClick={toggleMenu}>Work</a>
+          <a href="/about" className="side-nav-link" onClick={toggleMenu}>About</a>
+          <a href="/contact" className="side-nav-link" onClick={toggleMenu}>Contact</a>
+        </div>
+        
+        <div className='social-media'>
+          <div className='description-content'>
+            <p>SOCIALS</p>
+            <hr className='hr-class'></hr>
+          </div>
+          <div className="social-media-links">
             <a href="#" className="social-link">Behance</a>
             <a href="#" className="social-link">LinkedIn</a>
             <a href="#" className="social-link">Instagram</a>
           </div>
-
-          </div>
         </div>
-      )}
+      </div>
     </nav>
   );
 };
