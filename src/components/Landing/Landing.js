@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import horizontalLoop from '../../assets/seamless-scroll';
 import './landing.css';
 import Header from '../Header/Header';
+import Landing_01 from '../Landing_01/Landing_01';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -59,6 +60,8 @@ const Landing = () => {
   }, []);
 
   return (
+    <>
+    
     <section className="landing-container" ref={landingRef}>
       <Header />
       <div className="wrapper" ref={wrapperRef}>
@@ -170,6 +173,8 @@ const Landing = () => {
         </section>
       </section>
     </section>
+    <Landing_01 />
+    </>
   );
 };
 
