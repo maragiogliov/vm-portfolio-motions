@@ -1,6 +1,7 @@
 import React from 'react'
 import './About.css';
-import victorPic from '../../assets/victor-pic3.jpg';
+import victorPic from '../../assets/victorenalbania.jpg';
+import Header from '../Header/Header';
 
 
 
@@ -8,46 +9,38 @@ import victorPic from '../../assets/victor-pic3.jpg';
 export default function About() {
   return (
       <>
-      <div className='about-container'>
-        <h4 className='about-history'>My history </h4>
-        <h1 className='about-me'>About me</h1>
-        <div className='about-content'>
-          <div className='about-left'>
-            <img src={victorPic} alt="Victor"className='about-victor-image' />       
-          </div>
-          <div className='about-right'>
-            <h2>Hey!</h2>
-            <p>
-            I'm a Junior Front-End Developer with a passion for coding and an eye for UX/UI design. My journey has taken me through various experiences, from traveling and volunteering around Europe to settling in Berlin to pursue my interest in coding.  
+      <Header/>
 
-            </p>
-            <br/>
-            <p>
-            Currently, I'm working with Shopify Liquid Template Language, proficiently re-structuring Shopify's Liquid architecture for enhanced performance and scalability. 
-            </p>
-            <br/>
+      <div className='container-first'>
 
-            <p>
-            ...and that person is me, creating while flying high in the sky.
-
-
-
-
-</p>
-            
-          <div className='about-years-container'>
-            <h1 className='about-years'>3+ years</h1>
-            <h4 className='about-years-description'>Web Dev Experience</h4>
-
-            <h1 className='about-years'>7+ years</h1>
-            <h4 className='about-years-description'>Traveling and Working Around The World</h4>
-
-            <h1 className='about-years'>10+ years</h1>
-            <h4 className='about-years-description'>Architectural Design</h4>
-          </div>
-          </div>
+        <div className='first-title'>Helping brands thrive</div>
+        <div className='first-title'>in the digital world</div>
+        <div className='line'>
+          <div className='circle-overline'></div>
         </div>
+
       </div>
+
+      <div className='container-second'>
+
+        <div className='container-textfirst-about'>
+        <div className='container-flechita-text'>
+           
+            <div className='container-double-text'>
+              <div>I help companies from all over the world with tailor made solutions. With each project, I push my work to new horizons, always putting quality first.</div>
+              <div className='secondtext-short'>Always Exploring</div>
+            </div>
+        </div>
+
+        </div>
+
+        <div className='container-image-about'>
+        <img src={victorPic} alt="Victor in Albania" />
+        </div>
+
+      </div>
+
+    
       </>
     )
   }

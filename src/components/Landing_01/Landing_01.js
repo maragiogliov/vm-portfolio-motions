@@ -21,7 +21,7 @@ export const Landing_01 = () => {
 
       <div className='second-text-mobile'> The combination of my passion for design, code & interaction positions me in a unique place in the web design world</div>
 
-      <div className='btn-aboutme'> About me </div>
+      <a href="/about" className='btn-aboutme'> About me </a>
 
       </div>
       
