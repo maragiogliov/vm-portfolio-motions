@@ -40,6 +40,36 @@ export default function About() {
 
       </div>
 
+      <div className='container-third'>
+        <div className='third-title'> I can help you with...</div>
+
+        <div className='container-options'>
+
+          <div className='boxes-about'>
+            <h2>Design</h2>
+            <p>
+              With a solid track record in designing websites, I deliver strong and user-friendly digital designs. (Since 2024 only in combination with development)
+            </p>
+
+            
+          </div>
+          <div className='boxes-about'>
+          <h2>Development</h2>
+            <p>
+            I build scalable websites from scratch that fit seamlessly with design. My focus is on micro animations, transitions and interaction. Build with React, Vanilla or any JavaScript framework.
+            </p>
+          </div>
+          <div className='boxes-about'>
+          <h2>The full package</h2>
+            <p>
+            A complete website from concept to implementation, that's what makes me stand out. My great sense for design and my development skills enable me to create kick-ass projects.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
     
       </>
     )
