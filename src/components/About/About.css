@@ -96,7 +96,11 @@
 /*  mobile  */
 
 @media ( width <= 800px ){
+ .circle-overline{
 
+   left: 65%;
+ 
+  }
   .container-second{
 
     padding: 13vw;
