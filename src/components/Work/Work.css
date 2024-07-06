@@ -51,48 +51,42 @@
   width: 4rem ;
 }
 
-.projects-title {
-  font-size: var(--spacing-md);
-  color: var(--secondary-color);
-  font-family: 'Orbitron', sans-serif;
-  font-weight: bold;
-  margin-top: var(--spacing-md);
-  margin-bottom: var(--spacing-md);
-}
-
-.card {
-  background-color: #000000;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-top: var(--spacing-md);
-  transition: transform 0.9s ease;
-  max-width: 400px;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card img {
-  height: auto;
-  min-height: 300px;
+.container-mvp{
+  padding: 4rem;
   width: 100%;
-  max-width: 100%;
-  border-radius: 8px;
-  object-fit: cover;
+}
+.card {
+  padding: 16px;
+
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+.card-text-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.projects-title {
+  width: 30%;
+  font-size: 3vw;
+
+}
+.projects-location {
+  width: 20%;
+  font-size: 1.6vw;
+
+}
+.projects-services {
+  width: 30%;
+  font-size: 1.6vw;
+
+}
+.projects-year {
+  width: 10%;
+  font-size: 1.6vw;
+
 }
 
-.card p {
-  margin: 0;
-  font-size: 16px;
-  color: #c9c9c9;
-}
 
 
 @media ( width <= 800px ){
@@ -104,6 +98,9 @@
   }
   .work-filter-view{
     display:none;
+  }
+  .container-mvp{
+    padding: 2rem;
   }
   
 

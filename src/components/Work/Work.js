@@ -14,7 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
   {
-    name: 'The Barn Coffee',
+    name: 'The Barn',
+    location: 'Germany',
+    services:'Design & Development',
+    year:'2023',
     description: 'Transformed Shopify architecture, improved UX by app management. Enhanced products with metafields, extracted insights from reports. Crafted responsive interfaces, collaborated cross-functionally at The Barn Coffee Roasters.',
     image: thebarn,
     technologies: [ 'Shopify','UI'],
@@ -27,6 +30,9 @@ const projects = [
   },
   {
     name: 'V.PORTFOLIO',
+    location: 'Germany',
+    services:'Design & Development',
+    year:'2024',
     description: 'This is my personal portfolio where you can check my latest work and more about my journey and who I am.',
     image: vportfolio,
     technologies: [ 'React','UI'],
@@ -42,7 +48,10 @@ const projects = [
     ]
   },
   {
-    name: 'GH-CALCULATOR',
+    name: 'GH Calculator',
+    location: 'Denmark',
+    services:'Design & Development',
+    year:'2023',
     description: 'Designed and developed a B2C carbon footprint calculator using React.js, Redux, and IBM Carbon Design System.',
     image: greenhousecalculator,
     technologies: [ 'React','UI'],
@@ -54,7 +63,10 @@ const projects = [
     ]
   },
   {
-    name: 'LENGUAPP',
+    name: 'Lenguapp',
+    location: 'Germany',
+    services:'Design',
+    year:'2022',
     description: 'I conducted a UX research study for a language learning app, including competitive analysis, user interviews, personas, wireframing, prototyping, and usability tests.',
     image: imageSrc,
     technologies: [ 'UX Research'],
@@ -66,7 +78,10 @@ const projects = [
     ]
   },
   {
-    name: 'CV DESSERTS',
+    name: 'CV Desserts',
+    location: 'USA',
+    services:'Design & Development',
+    year:'2022',
     description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
     image: cvDesign,
     technologies: [ 'Shopify', 'UI'],
@@ -80,6 +95,9 @@ const projects = [
  
   {
     name: 'MOTHERCODE',
+    location: 'Germany',
+    services:'Design & Development',
+    year:'2021',
     description: 'Our Educational Management App simplifies learning for DCI Berlin School students, enabling code visualization, learning tracking, and exercise management.',
     image: mothercode,
     technologies: [ 'React','Express', 'Full Stack'],
@@ -130,40 +148,34 @@ export default function Work() {
 
 
       <div className='container-mvp'>
-        <div className='inner-container-mvp'>
           {projects.map((project, index) => (
             <div className='section-mvp card' key={index}>
-              <img src={project.image} alt={project.name} />
               <div className='card-text-container'>
-                <h2 className='projects-title '>{project.name}</h2>
-                <div className='project-description-container'>
-                  <p>{project.description}</p>
+                
+
+                <div className='projects-title'>    
+                  <h2>{project.name}</h2>
                 </div>
-                <div className='chips-container'>
-                  {project.technologies.map((technology, index) => (
-                    <div key={index} className='chip'>
-                      {technology}
-                    </div>
-                  ))}
+
+                <div className='projects-location'>    
+                <h2>{project.location}</h2>
                 </div>
-                <div className='button-container'>
-                  {project.buttons.map((button, index) => (
-                    <a
-                      key={index}
-                      href={button.url}
-                      className='button'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                    >
-                      {button.text}
-                    </a>
-                  ))}
+
+                <div className='projects-services'>    
+                  <h2>{project.services}</h2>
                 </div>
+
+                <div className='projects-year'>    
+                  <h2>{project.year}</h2>
+                </div>
+            
+              
               </div>
             </div>
           ))}
         </div>
-      </div>
+
+
       <section className='background-scrolltrigger-bottom'></section>
     </>
   );
