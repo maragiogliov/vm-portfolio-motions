@@ -161,12 +161,15 @@ export default function Work() {
                 <h2>{project.location}</h2>
                 </div>
 
-                <div className='projects-services'>    
-                  <h2>{project.services}</h2>
-                </div>
 
-                <div className='projects-year'>    
-                  <h2>{project.year}</h2>
+                <div className='servi-year-container'>
+                  <div className='projects-services'>    
+                    <h2>{project.services}</h2>
+                  </div>
+
+                  <div className='projects-year'>    
+                    <h2>{project.year}</h2>
+                  </div>
                 </div>
             
               

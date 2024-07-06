@@ -80,7 +80,10 @@
   
   }
   .projects-services {
-    width: 30%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
     font-size: 1.6vw;
   
   }
@@ -88,6 +91,13 @@
     width: 10%;
     font-size: 1.6vw;
   
+  }
+  .servi-year-container{
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+   
   }
 }
 
@@ -163,16 +173,26 @@
 
   .projects-title, 
   .projects-location, 
-  .projects-services, 
-  .projects-year {
+  .projects-services {
     width: 100%;
-    font-size: 4vw;
+    font-size: 2vw;
     margin-bottom: 0.5rem;
   }
 
   .projects-location{
     display: none;
   }
+  .servi-year-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .projects-year{
+    width: 20%;
+  }
+
+
 
 }
 
@@ -245,8 +265,7 @@
 
   .projects-title, 
   .projects-location, 
-  .projects-services, 
-  .projects-year {
+  .projects-services {
     width: 100%;
     font-size: 4vw;
     margin-bottom: 0.5rem;
@@ -254,6 +273,15 @@
 
   .projects-location{
     display: none;
+  }
+  .servi-year-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+   
+  }
+  .projects-year{
+    width: 20%;
   }
 }
 
