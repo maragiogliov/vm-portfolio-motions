@@ -96,6 +96,20 @@
 /*  mobile  */
 
 @media ( width <= 800px ){
+
+   .container-first{
+   
+      width: 100%;
+      padding: 13vw;
+      padding-top: 14vw;
+    }
+  
+   .first-title{
+    padding: 0;
+    margin: 0;
+    font-size: 7vw;
+    line-height: 8vw;
+   }
  .circle-overline{
 
    left: 65%;
@@ -112,6 +126,12 @@
     flex-direction: column;
     width: 100%;
  
+   }
+
+   .container-third{
+   
+      padding: 2rem;
+   
    }
 
    .container-textfirst-about{
