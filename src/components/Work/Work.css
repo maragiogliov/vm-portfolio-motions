@@ -59,9 +59,10 @@
     width: 100%;
   }
   .card {
-    padding: 16px;
-  
+    padding: 3vw;
     border-bottom: 1px solid rgb(226, 226, 226);
+
+   
   }
   .card-text-container{
     display: flex;
