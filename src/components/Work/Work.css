@@ -96,10 +96,16 @@
 
 
 @media ( width <= 800px ){
-
+.work-title-container{
+  padding: 2rem;
+}
+  .work-filter-container{
+    padding: 2rem;
+  }
   .work-filter-view{
     display:none;
   }
+  
 
 }
 
