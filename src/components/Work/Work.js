@@ -77,42 +77,7 @@ const projects = [
       }
     ]
   },
-  {
-    name: 'CV DESSERTS',
-    description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
-    image: cvDesign,
-    technologies: [ 'Shopify', 'UI'],
-    buttons: [
-      {
-        text: 'Behance',
-        url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
-      }
-    ]
-  },
-  {
-    name: 'CV DESSERTS',
-    description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
-    image: cvDesign,
-    technologies: [ 'Shopify', 'UI'],
-    buttons: [
-      {
-        text: 'Behance',
-        url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
-      }
-    ]
-  },
-  {
-    name: 'CV DESSERTS',
-    description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
-    image: cvDesign,
-    technologies: [ 'Shopify', 'UI'],
-    buttons: [
-      {
-        text: 'Behance',
-        url: 'https://www.behance.net/gallery/139554081/Web-Design-for-CV-Desserts'
-      }
-    ]
-  },
+ 
   {
     name: 'MOTHERCODE',
     description: 'Our Educational Management App simplifies learning for DCI Berlin School students, enabling code visualization, learning tracking, and exercise management.',
@@ -135,30 +100,34 @@ export default function Work() {
   useEffect(() => {
     const container = document.querySelector('.container-mvp');
     const sections = gsap.utils.toArray('.section-mvp');
-    gsap.to(sections, {
-      x: () => -(container.scrollWidth - window.innerWidth),
-      ease: 'none', // Linear easing for constant speed
-      duration: 4, // Adjust animation duration for quicker movement
 
-      scrollTrigger: {
-        trigger: '.container-mvp',
-        start: '35% 40%', // Ensures the animation starts immediately
-        end:'bottom 40%',
-        pin: true,
-        scrub: 0.3,
-        markers:true, 
-        
-       
-
-      }
-    });
     
     
   }, []);
 
   return (
     <>
-          <Header />
+      <Header />
+      <div className='work-title-container'>
+        <h2>Creating next level</h2>
+        <h2>digital products</h2>
+      </div>
+
+      <div className='work-filter-container'>
+
+        <div className='work-filters'>
+          <button>All</button>
+          <button>Design</button>
+          <button>Development</button>
+        </div>
+
+        <div className='work-filter-view'>
+          <button>List</button>
+          <button>square</button>
+        </div>
+
+      </div>
+
 
       <div className='container-mvp'>
         <div className='inner-container-mvp'>

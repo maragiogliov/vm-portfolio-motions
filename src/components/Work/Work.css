@@ -1,16 +1,54 @@
 /* General styles */
-.projects-collaborations {
-  font-family: 'Roboto', sans-serif;
-  font-size: 20px;
-  margin-top: var(--spacing-md);
-  color: rgb(255, 255, 255);
+
+.work-title-container{
+  width: 100%;
+
+  padding: 4rem;
 }
 
-.projects-recent {
-  font-family: 'Roboto', sans-serif;
-  font-size: 40px;
-  margin-bottom: var(--spacing-md);
-  color: var(--secondary-color);
+.work-title-container h2{
+  font-size: 6vw;
+  line-height: 7vw;
+}
+
+.work-filter-container{
+  width: 100%;
+  padding: 4rem;
+  padding-top: 0rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.work-filters{
+  display: flex;
+  flex-direction: row;
+}
+.work-filters button{
+  border: 1px solid grey;
+  border-radius: 50px;
+  padding: 0 2.5em;
+  margin-right: 1rem;
+  height: 4rem;
+}
+
+.work-filter-view{
+  display: flex;
+  flex-direction: row;
+}
+
+.work-filter-view button{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid grey;
+  border-radius: 50%;
+ 
+  margin-right: 1rem;
+  height: 4rem;
+  width: 4rem ;
 }
 
 .projects-title {
@@ -56,63 +94,15 @@
   color: #c9c9c9;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end; /* Adjusted to align buttons to the right */
-  width: 100%;
+
+@media ( width <= 800px ){
+
+  .work-filter-view{
+    display:none;
+  }
+
 }
 
-.button {
-  background-color: none;
-  border: 2px solid rgb(255, 255, 255);
-  color: rgb(255, 255, 255);
-  padding: 12px 24px;
-  margin-bottom: var(--spacing-sm);
-  margin-left: 8px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
-.button:hover {
-  background-color: var(--secondary-color);
-}
 
-/* Container and Section styles */
-.container-mvp {
-  display: flex;
-  overflow-x: auto; /* Ensure horizontal scroll if necessary */
-  scroll-snap-type: x mandatory; /* Snap to each card */
-  position: relative;
-  top:32px;
-  left:50%;
-border: 2px solid red;
-padding-left:4rem;
-}
 
-.inner-container-mvp {
-  display: flex;
-  width: 100%;
-  scroll-snap-type: x mandatory; /* Snap to each card */
-}
-
-.section-mvp {
-  flex: 0 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  box-sizing: border-box;
-  scroll-snap-align: start; /* Ensure cards snap to start of viewport */
-  width: 100%; /* Adjusted to ensure full width of viewport */
-  max-width: 400px; /* Adjust as necessary */
-  margin: 0 10px; /* Adjust margin between cards */
-}
-.background-scrolltrigger-bottom{
-  height: 500px;
-}
