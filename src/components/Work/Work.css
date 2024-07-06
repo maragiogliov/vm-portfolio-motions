@@ -226,9 +226,9 @@
   .work-filters button{
     border: 1px solid grey;
     border-radius: 50px;
-    padding: 0 1.5em;
+    padding: 0 1.6em;
     margin-right: 0rem;
-    height: 3rem;
+    height: 3.6rem;
     font-size: 3.8vw;
   } 
   .work-filter-view{
@@ -258,7 +258,7 @@
   }
   .card {
     border-bottom: 1px solid rgb(226, 226, 226);
-    padding: 16px;
+    padding: 0px;
   }
 
   .card-text-container {
@@ -283,6 +283,7 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    align-items: center;
    
   }
   .projects-year{
