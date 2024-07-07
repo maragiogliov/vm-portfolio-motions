@@ -2,8 +2,9 @@
 @media (min-width: 800px) {
   .work-title-container {
     width: 100%;
-    padding: 4rem;
+    padding: 14rem;
     padding-top: 10rem;
+    padding-bottom: 4rem;
   }
 
   .work-title-container h2 {
@@ -13,7 +14,10 @@
 
   .work-filter-container {
     width: 100%;
-    padding: 4rem;
+    padding: 14rem;
+    padding-left: 14rem;
+    padding-right: 14rem;
+    padding-bottom: 4rem;
     padding-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -61,7 +65,8 @@
   .description-row-container {
     width: 100%;
     border-bottom: 1px solid rgb(226, 226, 226);
-    padding: 3vw;
+    padding: 7.5rem;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-direction: row;
     font-size: 0.8vw;
@@ -87,12 +92,15 @@
   }
 
   .container-mvp {
-    padding: 4rem;
+    padding: 7.5rem;
+    padding-top: 0rem;
     width: 100%;
   }
 
   .card {
     padding: 3vw;
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
     border-bottom: 1px solid rgb(226, 226, 226);
   }
 
@@ -144,7 +152,7 @@
 
 
 
-@media ( width <= 800px ){
+@media ( width <= 1100px ){
 
   .work-title-container{
     width: 100%;
@@ -345,6 +353,5 @@
     width: 20%;
   }
 }
-
 
 
