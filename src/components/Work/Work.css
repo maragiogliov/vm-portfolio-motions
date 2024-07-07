@@ -181,6 +181,11 @@
     font-size: 3.8vw;
   } 
 
+  .work-filters .active {
+    background-color: black;
+    color: white;
+  }
+
   .work-filter-view{
     display: none;
     
