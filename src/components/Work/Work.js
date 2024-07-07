@@ -167,8 +167,10 @@ export default function Work() {
         <div className='description-row-container'>
           <div className='description-client-container'>CLIENT</div>
           <div className='description-location-container'>LOCATION</div>
-          <div className='description-services-container'>SERVICES</div>
-          <div className='description-year-container'>YEAR</div>
+          <div className='description-servi-year-container'>
+            <div className='description-services-container'>SERVICES</div>
+            <div className='description-year-container'>YEAR</div>
+          </div>
         </div>
 
         {filteredProjects.map((project, index) => (
