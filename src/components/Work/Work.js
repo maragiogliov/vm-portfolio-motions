@@ -16,11 +16,11 @@ const projects = [
   {
     name: 'The Barn',
     location: 'Germany',
-    services:'Design & Development',
-    year:'2023',
+    services: 'Design & Development',
+    year: '2023',
     description: 'Transformed Shopify architecture, improved UX by app management. Enhanced products with metafields, extracted insights from reports. Crafted responsive interfaces, collaborated cross-functionally at The Barn Coffee Roasters.',
     image: thebarn,
-    technologies: [ 'Shopify','UI'],
+    technologies: ['Shopify', 'UI'],
     buttons: [
       {
         text: 'Web',
@@ -31,11 +31,11 @@ const projects = [
   {
     name: 'V.PORTFOLIO',
     location: 'Germany',
-    services:'Design & Development',
-    year:'2024',
+    services: 'Design & Development',
+    year: '2024',
     description: 'This is my personal portfolio where you can check my latest work and more about my journey and who I am.',
     image: vportfolio,
-    technologies: [ 'React','UI'],
+    technologies: ['React', 'UI'],
     buttons: [
       {
         text: 'Web',
@@ -50,11 +50,11 @@ const projects = [
   {
     name: 'GH Calculator',
     location: 'Denmark',
-    services:'Design & Development',
-    year:'2023',
+    services: 'Design & Development',
+    year: '2023',
     description: 'Designed and developed a B2C carbon footprint calculator using React.js, Redux, and IBM Carbon Design System.',
     image: greenhousecalculator,
-    technologies: [ 'React','UI'],
+    technologies: ['React', 'UI'],
     buttons: [
       {
         text: 'Web',
@@ -65,11 +65,11 @@ const projects = [
   {
     name: 'Lenguapp',
     location: 'Germany',
-    services:'Design',
-    year:'2022',
+    services: 'Design',
+    year: '2022',
     description: 'I conducted a UX research study for a language learning app, including competitive analysis, user interviews, personas, wireframing, prototyping, and usability tests.',
     image: imageSrc,
-    technologies: [ 'UX Research'],
+    technologies: ['UX Research'],
     buttons: [
       {
         text: 'Behance',
@@ -80,11 +80,11 @@ const projects = [
   {
     name: 'CV Desserts',
     location: 'USA',
-    services:'Design & Development',
-    year:'2022',
+    services: 'Design',
+    year: '2022',
     description: 'I designed a visually appealing dessert website for a Florida client, highlighting ease of use, appetizing photos, simple ordering, and transparent values. A delight for eyes and taste buds!',
     image: cvDesign,
-    technologies: [ 'Shopify', 'UI'],
+    technologies: ['Shopify', 'UI'],
     buttons: [
       {
         text: 'Behance',
@@ -92,15 +92,14 @@ const projects = [
       }
     ]
   },
- 
   {
     name: 'MOTHERCODE',
     location: 'Germany',
-    services:'Design & Development',
-    year:'2021',
+    services: 'Design & Development',
+    year: '2021',
     description: 'Our Educational Management App simplifies learning for DCI Berlin School students, enabling code visualization, learning tracking, and exercise management.',
     image: mothercode,
-    technologies: [ 'React','Express', 'Full Stack'],
+    technologies: ['React', 'Express', 'Full Stack'],
     buttons: [
       {
         text: 'Youtube',
@@ -115,13 +114,18 @@ const projects = [
 ];
 
 export default function Work() {
-  useEffect(() => {
-    const container = document.querySelector('.container-mvp');
-    const sections = gsap.utils.toArray('.section-mvp');
+  const [filter, setFilter] = useState('All');
+  const [filteredProjects, setFilteredProjects] = useState(projects);
 
-    
-    
-  }, []);
+  useEffect(() => {
+    let filtered = projects;
+    if (filter === 'Design') {
+      filtered = projects.filter(project => project.services.includes('Design'));
+    } else if (filter === 'Development') {
+      filtered = projects.filter(project => project.services.includes('Development'));
+    }
+    setFilteredProjects(filtered);
+  }, [filter]);
 
   return (
     <>
@@ -132,61 +136,65 @@ export default function Work() {
       </div>
 
       <div className='work-filter-container'>
-
         <div className='work-filters'>
-          <button>All</button>
-          <button>Design</button>
-          <button>Development</button>
+          <button 
+            className={filter === 'All' ? 'active' : ''} 
+            onClick={() => setFilter('All')}
+          >
+            All
+          </button>
+          <button 
+            className={filter === 'Design' ? 'active' : ''} 
+            onClick={() => setFilter('Design')}
+          >
+            Design
+          </button>
+          <button 
+            className={filter === 'Development' ? 'active' : ''} 
+            onClick={() => setFilter('Development')}
+          >
+            Development
+          </button>
         </div>
 
         <div className='work-filter-view'>
           <button>List</button>
           <button>square</button>
         </div>
-
       </div>
 
-
       <div className='container-mvp'>
-
         <div className='description-row-container'>
           <div className='description-client-container'>CLIENT</div>
           <div className='description-location-container'>LOCATION</div>
-          <div className='description-services-container' >SERVICES</div>
+          <div className='description-services-container'>SERVICES</div>
           <div className='description-year-container'>YEAR</div>
         </div>
-    
-          {projects.map((project, index) => (
-            <div className='section-mvp card' key={index}>
-              <div className='card-text-container'>
-                
-                <div className='projects-title'>
-                  <h2>{project.name}</h2>
-                </div>
 
-                <div className='projects-location'>    
+        {filteredProjects.map((project, index) => (
+          <div className='section-mvp card' key={index}>
+            <div className='card-text-container'>
+              <div className='projects-title'>
+                <h2>{project.name}</h2>
+              </div>
+
+              <div className='projects-location'>    
                 <h2>{project.location}</h2>
+              </div>
+
+              <div className='servi-year-container'>
+                <div className='projects-services'>    
+                  <h2>{project.services}</h2>
                 </div>
 
-
-                <div className='servi-year-container'>
-                  <div className='projects-services'>    
-                    <h2>{project.services}</h2>
-                  </div>
-
-                  <div className='projects-year'>    
-                    <h2>{project.year}</h2>
-                  </div>
+                <div className='projects-year'>    
+                  <h2>{project.year}</h2>
                 </div>
-            
-              
               </div>
             </div>
-          ))}
-        </div>
-
-
-      
+          </div>
+        ))}
+      </div>
     </>
   );
 }
