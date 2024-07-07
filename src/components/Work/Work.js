@@ -148,12 +148,19 @@ export default function Work() {
 
 
       <div className='container-mvp'>
+
+        <div className='description-row-container'>
+          <div className='description-client-container'>CLIENT</div>
+          <div className='description-location-container'>LOCATION</div>
+          <div className='description-services-container' >SERVICES</div>
+          <div className='description-year-container'>YEAR</div>
+        </div>
+    
           {projects.map((project, index) => (
             <div className='section-mvp card' key={index}>
               <div className='card-text-container'>
                 
-
-                <div className='projects-title'>    
+                <div className='projects-title'>
                   <h2>{project.name}</h2>
                 </div>
 
@@ -179,7 +186,7 @@ export default function Work() {
         </div>
 
 
-      <section className='background-scrolltrigger-bottom'></section>
+      
     </>
   );
 }
