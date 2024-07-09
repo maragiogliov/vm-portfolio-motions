@@ -9,6 +9,7 @@ import greenhousecalculator from '../../assets/greenhousecalculator.png';
 import vportfolio from '../../assets/v-portfolio.png';
 import thebarn from '../../assets/3-devices-black.png';
 import Header from '../Header/Header'
+import Footer from '../Footer/Footer';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -197,6 +198,7 @@ export default function Work() {
           </div>
         ))}
       </div>
+      <Footer />
     </>
   );
 }
