@@ -58,13 +58,11 @@ const Contact = () => {
                   <form class="contact-minimal-form">
                     <div class="contact-form-group">
                       <label for="name">What's your name?</label>
-                      <input type="text" id="name" name="name" placeholder="John Doe" required/>
-                      <span class="contact-required-indicator">*</span>
+                      <input type="text" id="name" name="name" placeholder="John Doe *" required></input>
                     </div>
                     <div class="contact-form-group">
                       <label for="email">What's your email?</label>
-                      <input type="email" id="email" name="email" placeholder="john@doe.com" required/>
-                      <span class="contact-required-indicator">*</span>
+                      <input type="email" id="email" name="email" placeholder="john@doe.com*" required/>
                     </div>
                     <div class="contact-form-group">
                       <label for="organization">What's the name of your organization?</label>
@@ -76,14 +74,34 @@ const Contact = () => {
                     </div>
                     <div class="contact-form-group">
                       <label for="message">Your message</label>
-                      <textarea id="message" name="message" placeholder="Hello Victor, can you help me with ..." required></textarea>
-                      <span class="contact-required-indicator">*</span>
+                      <textarea id="message" name="message" placeholder="Hello Victor, can you help me with ...*" required rows="6" cols="50"></textarea>
                     </div>
                     <button type="submit" class="contact-submit-button">Submit</button>
                   </form>
 
                 </div>
+
+
                 <div className="contact-container-details">
+
+                  <div className="contact-detail-container">
+                    <div className="detail-title">CONTACT DETAILS</div>
+                    <div className="detail-content">victormaragioglio1228@gmail.com</div>
+                    <div className="detail-content">+49 1523 6786964</div>
+                  </div>
+
+                  <div  className="contact-detail-container">
+                    <div className="detail-title">BUSINESS DETAILS</div>
+                    <div className="detail-content">Victor Maragioglio</div>
+                    <div className="detail-content">Location: South Wales</div>
+                  </div>
+
+                  <div  className="contact-detail-container">
+                    <div className="detail-title">SOCIALS</div>
+                    <div className="detail-content">Instagram</div>
+                    <div className="detail-content">Behance</div>
+                    <div className="detail-content">LinkedIn</div>
+                  </div>
 
                 </div>
 
