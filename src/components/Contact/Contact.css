@@ -1,6 +1,9 @@
 .contact-container{
     padding: 4rem;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .flecha-icon{
     position: relative;
@@ -58,12 +61,15 @@
     flex-direction: column;
     justify-content: center;
     border-bottom: 1px solid grey;
-    padding: 1rem;
+    padding: 2rem;
+    padding-bottom: 3rem;
    
   }
   .contact-form-group:first-child {
-   
+    
     border-top: 1px solid grey;
+    padding-top: 3.2rem;
+   
   }
   
   label {
@@ -101,17 +107,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
 
-    position: relative;
-    left: 60%;
+ 
+  
+
   
     border-radius: 100%;
     background-color: #007BFF;
     color: white;
     font-size: 1rem;
     cursor: pointer;
-    margin-top: 4rem;
+
+    position: relative;
+    top: -100px;
+    left: 60%;
   }
   
   .contact-submit-button:hover {
@@ -144,10 +153,10 @@
     margin-bottom: 3vw;
 }
 .detail-title{
-    font-size: 2vw;
+    font-size: 0.6vw;
 }
 .detail-content{
-    font-size: 1.8vw;
+    font-size: 1vw;
 }
 
 
@@ -187,8 +196,15 @@
 }
 @media ( width >= 800px ){
     .contact-container{
-        padding: 2rem;
+        padding: 15vw;
+        padding-top: 2rem;
         width: 100%;
+    }
+    .contact-form-details-container{
+        padding-top: 10vw;
+    }
+    .contact-container-title h2{
+        font-size: 6vw;
     }
     .contact-form-group{
         margin-right: 6vw;
@@ -199,6 +215,13 @@
     .flecha-icon{
       display: none;
        
+      }
+      label{
+        font-size: 1.4vw;
+        font-weight: 300;
+      }
+      input{
+        font-size: 1.2vw;
       }
    
 }
