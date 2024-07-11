@@ -216,6 +216,10 @@
       display: none;
        
       }
+      .contact-submit-button {
+        height: 12vw;
+        width: 12vw;
+         }
       label{
         font-size: 1.4vw;
         font-weight: 300;
