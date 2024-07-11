@@ -1,0 +1,143 @@
+.contact-container{
+    padding: 4rem;
+    width: 100%;
+}
+.flecha-icon{
+    position: relative;
+    left: 90%;
+    bottom: 30vw;
+    
+    transform: rotate(90deg);
+   
+  }
+.contact-container-title{
+    padding-top: 8rem;
+    width: 100%;
+    border: 2px solid;
+}
+.contact-img-title-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.contact-container-title h2{
+   font-size: 9vw;
+   line-height: 7.5vw;
+}
+.contact-img{
+    height: 8vw;
+    width: 8vw;
+    border: 2px solid;
+    border-radius: 100%;
+    margin-right: 1.6vw;
+
+    
+}
+
+
+.contact-form-details-container{
+    width: 100%;
+    
+    border: 2px solid;
+    display: flex;
+    flex-direction: row;
+    padding-top: 15vw;
+}
+.contact-container-form{
+    width: 70%;
+    height: auto;
+    border: 2px solid;
+}
+
+.contact-minimal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .contact-form-group {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  input, textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .contact-submit-button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .contact-submit-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .contact-required-indicator {
+    color: red;
+    margin-left: 0.25rem;
+    font-size: 1.2rem;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-container-details{
+    width: 30%;
+    height: auto;
+    border: 2px solid;
+}
+
+
+@media ( width <= 800px ){
+    .contact-container{
+        padding: 2rem;
+        width: 100%;
+    }
+   
+}
+@media ( width >= 800px ){
+    .contact-container{
+        padding: 2rem;
+        width: 100%;
+    }
+    .contact-img{
+        display: none;
+    }
+    .flecha-icon{
+      display: none;
+       
+      }
+   
+}
