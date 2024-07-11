@@ -2,6 +2,7 @@ import React from 'react'
 import './About.css';
 import victorPic from '../../assets/victorenalbania.jpg';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 
 
@@ -69,7 +70,7 @@ export default function About() {
         </div>
 
       </div>
-
+      <Footer />
     
       </>
     )

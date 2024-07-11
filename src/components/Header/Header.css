@@ -74,6 +74,7 @@
 .side-nav-link {
   margin-bottom: 0.8rem;
   text-decoration: none;
+
   color: white;
   font-size: 38px;
 }
@@ -99,4 +100,9 @@
   border-radius: 100px;
   background-color: rgb(61, 61, 231);
   color: white;
+}
+
+.active-link {
+  text-decoration: underline;
+  text-underline-offset: 8px; /* Adjust this value to create more space */
 }

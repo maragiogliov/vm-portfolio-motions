@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import gsap from 'gsap';
 import './Header.css';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sideNavRef = useRef(null);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -34,13 +36,17 @@ export const Header = () => {
     }
   }, [isOpen]);
 
+  const getLinkClass = (path) => {
+    return location.pathname === path ? 'active-link' : '';
+  };
+
   return (
     <nav className="nav-container-landing">
       <a href="/" className="home-link">© Code by Victor</a>
       <div className="hambu-container">
-        <a href="/work" className="landing-hola">Work</a>
-        <a href="/about" className="landing-hola">About</a>
-        <a href="/contact" className="landing-hola">Contact</a>
+        <a href="/work" className={`landing-hola ${getLinkClass('/work')}`}>Work</a>
+        <a href="/about" className={`landing-hola ${getLinkClass('/about')}`}>About</a>
+        <a href="/contact" className={`landing-hola ${getLinkClass('/contact')}`}>Contact</a>
       </div>
       <div className="hambu-container-mobile" onClick={toggleMenu}>
         <div className="landing-hola">• Menu</div>
@@ -53,10 +59,10 @@ export const Header = () => {
             <p>NAVIGATION</p>
             <hr className='hr-class'></hr>
           </div>
-          <a href="/" className="side-nav-link" onClick={toggleMenu}>Home</a>
-          <a href="/work" className="side-nav-link" onClick={toggleMenu}>Work</a>
-          <a href="/about" className="side-nav-link" onClick={toggleMenu}>About</a>
-          <a href="/contact" className="side-nav-link" onClick={toggleMenu}>Contact</a>
+          <a href="/" className={`side-nav-link ${getLinkClass('/')}`} onClick={toggleMenu}>Home</a>
+          <a href="/work" className={`side-nav-link ${getLinkClass('/work')}`} onClick={toggleMenu}>Work</a>
+          <a href="/about" className={`side-nav-link ${getLinkClass('/about')}`} onClick={toggleMenu}>About</a>
+          <a href="/contact" className={`side-nav-link ${getLinkClass('/contact')}`} onClick={toggleMenu}>Contact</a>
         </div>
         
         <div className='social-media'>
