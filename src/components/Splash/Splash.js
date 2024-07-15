@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import './Splash.css'; // Ensure Splash.css includes appropriate styles for your splash animation
 
-const Splash = ({ setShowSplash }) => {
+const Splash = ({ setShowSplash, path }) => {
   const splashRef = useRef(null);
 
   useEffect(() => {
@@ -13,17 +13,17 @@ const Splash = ({ setShowSplash }) => {
 
     // Animation to fade in the splash screen from the dark grey color
     timeline.to(splashRef.current, {
-      duration: 1,
+      duration: 0.8,
       opacity: 1,
       ease: 'power2.inOut',
     });
 
     // Animation to withdraw the splash screen from bottom to top
     timeline.to(splashRef.current, {
-      duration: 1,
+      duration: 0.6,
       height: 0,
       ease: 'power2.inOut',
-      delay: 1, // Delay after initial animation
+      delay: 1,
     });
 
     return () => {
@@ -31,10 +31,18 @@ const Splash = ({ setShowSplash }) => {
     };
   }, [setShowSplash]);
 
+  // Handle path display logic
+  let displayText = "Welcome";
+  if (path === "/") {
+    displayText = "Welcome";
+  } else {
+    displayText = path.replace(/\//g, ""); // Remove leading slashes
+  }
+
   return (
     <div className="splash" ref={splashRef}>
-      {/* Add your splash content here */}
-      <h1>Welcome</h1>
+      {/* Display the processed text */}
+      <h1>{displayText}</h1>
     </div>
   );
 };

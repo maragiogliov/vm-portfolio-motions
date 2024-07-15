@@ -19,7 +19,7 @@ const AppContent = () => {
 
   return (
     <>
-      {showSplash && <Splash setShowSplash={setShowSplash} />}
+      {showSplash && <Splash setShowSplash={setShowSplash} path={location.pathname} />}
       {!showSplash && (
         <div className='app-container'>
           <Routes>
