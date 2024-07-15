@@ -2,7 +2,7 @@
 
 .work-main-container{
   opacity: 0;
-  transition: opacity 4s; /* Optional: add a transition for a smoother effect */
+  transition: opacity 3s; /* Optional: add a transition for a smoother effect */
 }
 
 @media (min-width: 800px) {
