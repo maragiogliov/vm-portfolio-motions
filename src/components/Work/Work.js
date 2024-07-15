@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './Work.css';
@@ -117,6 +117,8 @@ const projects = [
 export default function Work() {
   const [filter, setFilter] = useState('All');
   const [filteredProjects, setFilteredProjects] = useState(projects);
+  const workRef = useRef(null);
+
 
   useEffect(() => {
     let filtered = projects;
@@ -128,77 +130,86 @@ export default function Work() {
     setFilteredProjects(filtered);
   }, [filter]);
 
+    // Immediately set opacity to 1 once component mounts
+    useEffect(() => {
+      gsap.set(workRef.current, { opacity: 1 });
+    }, []);
+
   return (
     <>
-      <Header />
-      <div className='work-title-container'>
-        <h2>Creating next level</h2>
-        <h2>digital products</h2>
-      </div>
+    <div className='work-main-container' ref={workRef}>
 
-      <div className='work-filter-container'>
-        <div className='work-filters'>
-          <button 
-            className={filter === 'All' ? 'active' : ''} 
-            onClick={() => setFilter('All')}
-          >
-            All
-          </button>
-          <button 
-            className={filter === 'Design' ? 'active' : ''} 
-            onClick={() => setFilter('Design')}
-          >
-            Design
-          </button>
-          <button 
-            className={filter === 'Development' ? 'active' : ''} 
-            onClick={() => setFilter('Development')}
-          >
-            Development
-          </button>
+        <Header />
+        <div className='work-title-container'>
+          <h2>Creating next level</h2>
+          <h2>digital products</h2>
         </div>
 
-        <div className='work-filter-view'>
-          <button>List</button>
-          <button>square</button>
-        </div>
-      </div>
+        <div className='work-filter-container'>
+          <div className='work-filters'>
+            <button 
+              className={filter === 'All' ? 'active' : ''} 
+              onClick={() => setFilter('All')}
+            >
+              All
+            </button>
+            <button 
+              className={filter === 'Design' ? 'active' : ''} 
+              onClick={() => setFilter('Design')}
+            >
+              Design
+            </button>
+            <button 
+              className={filter === 'Development' ? 'active' : ''} 
+              onClick={() => setFilter('Development')}
+            >
+              Development
+            </button>
+          </div>
 
-      <div className='container-mvp'>
-        <div className='description-row-container'>
-          <div className='description-client-container'>CLIENT</div>
-          <div className='description-location-container'>LOCATION</div>
-          <div className='description-servi-year-container'>
-            <div className='description-services-container'>SERVICES</div>
-            <div className='description-year-container'>YEAR</div>
+          <div className='work-filter-view'>
+            <button>List</button>
+            <button>square</button>
           </div>
         </div>
 
-        {filteredProjects.map((project, index) => (
-          <div className='section-mvp card' key={index}>
-            <div className='card-text-container'>
-              <div className='projects-title'>
-                <h2>{project.name}</h2>
-              </div>
+        <div className='container-mvp'>
+          <div className='description-row-container'>
+            <div className='description-client-container'>CLIENT</div>
+            <div className='description-location-container'>LOCATION</div>
+            <div className='description-servi-year-container'>
+              <div className='description-services-container'>SERVICES</div>
+              <div className='description-year-container'>YEAR</div>
+            </div>
+          </div>
 
-              <div className='projects-location'>    
-                <h2>{project.location}</h2>
-              </div>
-
-              <div className='servi-year-container'>
-                <div className='projects-services'>    
-                  <h2>{project.services}</h2>
+          {filteredProjects.map((project, index) => (
+            <div className='section-mvp card' key={index}>
+              <div className='card-text-container'>
+                <div className='projects-title'>
+                  <h2>{project.name}</h2>
                 </div>
 
-                <div className='projects-year'>    
-                  <h2>{project.year}</h2>
+                <div className='projects-location'>    
+                  <h2>{project.location}</h2>
+                </div>
+
+                <div className='servi-year-container'>
+                  <div className='projects-services'>    
+                    <h2>{project.services}</h2>
+                  </div>
+
+                  <div className='projects-year'>    
+                    <h2>{project.year}</h2>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <Footer />
+          ))}
+        </div>
+        <Footer />
+
+    </div>
     </>
   );
 }

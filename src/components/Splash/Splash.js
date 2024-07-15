@@ -13,14 +13,14 @@ const Splash = ({ setShowSplash, path }) => {
 
     // Animation to fade in the splash screen from the dark grey color
     timeline.to(splashRef.current, {
-      duration: 0.8,
+      duration: 0.7,
       opacity: 1,
       ease: 'power2.inOut',
     });
 
     // Animation to withdraw the splash screen from bottom to top
     timeline.to(splashRef.current, {
-      duration: 0.6,
+      duration: 0.7,
       height: 0,
       ease: 'power2.inOut',
       delay: 1,
