@@ -1,0 +1,9 @@
+.landing-02-main-container{
+    height: 20rem;
+    border: 2px solid red;
+    width: 100%;
+}
+
+.title-landing-02{
+    padding: 12rem;
+}

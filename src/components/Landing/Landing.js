@@ -5,6 +5,9 @@ import horizontalLoop from '../../assets/seamless-scroll';
 import './landing.css';
 import Header from '../Header/Header';
 import Landing_01 from '../Landing_01/Landing_01';
+import Landing_02 from '../Landing_02/Landing_02';
+import Footer from '../Footer/Footer';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -174,6 +177,9 @@ const Landing = () => {
       </section>
     </section>
     <Landing_01 />
+    <Landing_02 />
+    <Footer />
+
     </>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import './Landing_01.css';
-import Footer from '../Footer/Footer';
 
 export const Landing_01 = () => {
   return (
@@ -30,7 +29,6 @@ export const Landing_01 = () => {
         
 
     </section>
-    <Footer />
 
     </>
   )
