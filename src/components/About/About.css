@@ -1,3 +1,7 @@
+.about-main-container{
+   opacity: 0;
+   transition: opacity 3s;
+}
 
 @media ( width >= 400px ){
 
