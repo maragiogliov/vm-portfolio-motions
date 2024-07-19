@@ -1,9 +1,111 @@
-.landing-02-main-container{
-    height: 20rem;
-    border: 2px solid red;
-    width: 100%;
-}
+/* General styles */
 
-.title-landing-02{
-    padding: 12rem;
-}
+.landing_02-main-container {
+    padding: 2rem;
+    width: 100%;
+  }
+  
+  .title-landing_02 {
+    font-size: 6vw;
+    line-height: 7vw;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  
+  /* Project container and cards */
+  
+  .landing_02-projects-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .landing_02-project-card {
+    width: 30%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .landing_02-project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .landing_02-project-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .landing_02-project-info {
+    padding: 1rem 0;
+    text-align: center;
+  }
+  
+  .landing_02-project-info h2 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .landing_02-project-info p {
+    margin: 0.2rem 0;
+    font-size: 1rem;
+  }
+  
+  /* Responsive styles */
+  
+  @media (min-width: 800px) {
+    .title-landing_02 {
+      font-size: 6vw;
+      line-height: 7vw;
+    }
+  
+    .landing_02-projects-container {
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .landing_02-project-card {
+      width: 30%;
+    }
+  }
+  
+  @media (max-width: 1100px) {
+    .title-landing_02 {
+      font-size: 9vw;
+      line-height: 10vw;
+    }
+  
+    .landing_02-projects-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+  
+    .landing_02-project-card {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .title-landing_02 {
+      font-size: 9vw;
+      line-height: 10vw;
+    }
+  
+    .landing_02-projects-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  
+    .landing_02-project-card {
+      width: 100%;
+    }
+  }
+  
