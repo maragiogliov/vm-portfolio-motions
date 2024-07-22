@@ -30,21 +30,24 @@ export default function Landing_02() {
 
   return (
     <>
-      <div className='landing-02-main-container'>
-        <div className='title-landing-02'>RECENT PROJECTSS</div>
-        <div className='projects-container'>
+      <div className='landing_02-main-container'>
+        <div className='title-landing_02'>RECENT WORK</div>
+        <div className='landing_02-projects-container'>
           {projects.slice(0, 3).map((project, index) => (
-            <div className='project-card' key={index}>
-              <div className='project-info'>
+            <div className='landing_02-project-card' key={index}>
+              <div className='landing_02-project-info'>
                 <h2>{project.name}</h2>
-                <p>{project.location}</p>
                 <p>{project.services}</p>
-                <p>{project.year}</p>
+               
               </div>
             </div>
           ))}
         </div>
       </div>
+      
+      <button className='landing_02-morework-button'>More Work</button>
+
+
     </>
   );
 }
