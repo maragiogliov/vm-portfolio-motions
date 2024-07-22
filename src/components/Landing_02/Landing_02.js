@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import './Landing_02.css';
-import thebarn from '../../assets/3-devices-black.png';
-import imageSrc from '../../assets/Frame 32.jpg';
-import cvDesign from '../../assets/xvcwebsite.png';
-import mothercode from '../../assets/mothercode.png';
-import greenhousecalculator from '../../assets/greenhousecalculator.png';
-import vportfolio from '../../assets/v-portfolio.png';
+import thebarn from '../../assets/thebarn-img.png';
+import imageSrc from '../../assets/Lenguapp-img.png';
+import cvDesign from '../../assets/XCV-img.png';
+import mothercode from '../../assets/mothercode-img.png';
+import greenhousecalculator from '../../assets/greenhouse-img.png';
+import vportfolio from '../../assets/vportfolio-img.png';
 
 export default function Landing_02() {
   const [projects, setProjects] = useState([]);
@@ -36,7 +36,7 @@ export default function Landing_02() {
       .catch(error => console.error('Error fetching the projects data:', error));
   }, []);
 
-  const numberOfProjectsToShow = screenWidth < 900 ? 2 : 4;
+  const numberOfProjectsToShow = screenWidth < 900 ? 4 : 4;
 
   return (
     <>
@@ -46,14 +46,17 @@ export default function Landing_02() {
           {projects.slice(0, numberOfProjectsToShow).map((project, index) => (
             <div className='landing_02-project-card' key={index}>
               <div className='landing_02-project-info'>
-                <h2>{project.name}</h2>
+              <img src={project.image} alt={project.name} className='project-image' />
+              <h2>{project.name}</h2>
                 <p>{project.services}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
-      <button className='landing_02-morework-button'>More Work</button>
+      <a href='/work' className='landing_02-morework-button'>More Work</a>
+
+      
     </>
   );
 }

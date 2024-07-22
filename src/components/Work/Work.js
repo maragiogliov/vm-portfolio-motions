@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import './Work.css';
-import thebarn from '../../assets/3-devices-black.png';
-import imageSrc from '../../assets/Frame 32.jpg';
-import cvDesign from '../../assets/xvcwebsite.png';
-import mothercode from '../../assets/mothercode.png';
-import greenhousecalculator from '../../assets/greenhousecalculator.png';
-import vportfolio from '../../assets/v-portfolio.png';
+import thebarn from '../../assets/thebarn-img.png';
+import imageSrc from '../../assets/Lenguapp-img.png';
+import cvDesign from '../../assets/XCV-img.png';
+import mothercode from '../../assets/mothercode-img.png';
+import greenhousecalculator from '../../assets/greenhouse-img.png';
+import vportfolio from '../../assets/vportfolio-img.png';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
