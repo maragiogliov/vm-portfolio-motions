@@ -1,6 +1,7 @@
 .contact-main-container{
   opacity: 0;
   transition: opacity 3s;
+  width: 100%;
 }
 
 .contact-container{

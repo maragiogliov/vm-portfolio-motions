@@ -22,7 +22,7 @@ export default function Footer() {
         </div>
 
         <div className='line'>
-            <div className='circle-overline'>Get in touch</div>
+            <a href='/contact' className='circle-overline'>Get in touch</a>
         </div>
 
         <div className='buttons-footer-container'>
