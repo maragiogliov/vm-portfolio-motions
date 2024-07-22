@@ -11,16 +11,17 @@
     flex-direction: column;
     align-items: center;
 }
-.flecha-icon{
+.flecha-icon-contact{
     position: relative;
     left: 90%;
-    bottom: 30vw;
+    bottom: 0vw;
     
     transform: rotate(90deg);
    
   }
 .contact-container-title{
     padding-top: 8rem;
+    padding-bottom: 3rem;
     width: 100%;
 }
 .contact-img-title-container{

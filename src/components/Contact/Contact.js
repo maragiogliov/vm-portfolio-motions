@@ -23,7 +23,35 @@ const Contact = () => {
           <div className="contact-container">
 
             <div className="contact-container-title">
-
+            <section>
+              <svg
+                className="flecha-icon-contact"
+                width="15"
+                height="15"
+                viewBox="0 0 52 52"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect x="13" y="45" width="38" height="6" fill="black" />
+                <rect
+                  x="51"
+                  y="13"
+                  width="38"
+                  height="6"
+                  transform="rotate(90 51 13)"
+                  fill="black"
+                />
+                <rect
+                  x="4.67915"
+                  y="0.436523"
+                  width="65.6669"
+                  height="6"
+                  transform="rotate(45 4.67915 0.436523)"
+                  fill="black"
+                />
+              </svg>
+    
+            </section>
             
               <div className="contact-img-title-container">
                 <img className="contact-img"></img>
@@ -32,35 +60,7 @@ const Contact = () => {
               <h2>project together</h2>
 
             </div>
-            <section>
-        <svg
-          className="flecha-icon"
-          width="15"
-          height="15"
-          viewBox="0 0 52 52"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect x="13" y="45" width="38" height="6" fill="black" />
-          <rect
-            x="51"
-            y="13"
-            width="38"
-            height="6"
-            transform="rotate(90 51 13)"
-            fill="black"
-          />
-          <rect
-            x="4.67915"
-            y="0.436523"
-            width="65.6669"
-            height="6"
-            transform="rotate(45 4.67915 0.436523)"
-            fill="black"
-          />
-        </svg>
-    
-              </section>
+       
 
 
           <div className="contact-form-details-container">
