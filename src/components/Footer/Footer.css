@@ -88,9 +88,15 @@
    .footer-version-container{
     margin-right: 2rem;
    }
+
+   .footer-title-end{
+      color:grey;
+      font-size: 12px;
+   }
    .footer-social-container a{
     margin-right: 1rem;
    }
+
    
 
    @media ( width <= 800px ){

@@ -43,16 +43,16 @@ export default function Footer() {
       <div className='footer-bottom-info-container'>
         <div className='footer-version-time-container'>
           <div className='footer-version-container'>
-            <div>VERSION</div>
+            <div className='footer-title-end'>VERSION</div>
             <div>2024©Edition</div>
           </div>
           <div>
-            <div>LOCAL TIME</div>
+            <div className='footer-title-end'>LOCAL TIME</div>
             <div>{localTime}</div>
           </div>
         </div>
         <div>
-          <div>SOCIALS</div>
+          <div className='footer-title-end'>SOCIALS</div>
           <div className='footer-social-container'>
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a href="https://behance.net" target="_blank" rel="noopener noreferrer">Behance</a>
