@@ -9,6 +9,14 @@ import vportfolio from '../../assets/v-portfolio.png';
 
 export default function Landing_02() {
   const [projects, setProjects] = useState([]);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => setScreenWidth(window.innerWidth);
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     fetch('/WorksData.json')
@@ -28,26 +36,24 @@ export default function Landing_02() {
       .catch(error => console.error('Error fetching the projects data:', error));
   }, []);
 
+  const numberOfProjectsToShow = screenWidth < 900 ? 2 : 4;
+
   return (
     <>
       <div className='landing_02-main-container'>
         <div className='title-landing_02'>RECENT WORK</div>
         <div className='landing_02-projects-container'>
-          {projects.slice(0, 3).map((project, index) => (
+          {projects.slice(0, numberOfProjectsToShow).map((project, index) => (
             <div className='landing_02-project-card' key={index}>
               <div className='landing_02-project-info'>
                 <h2>{project.name}</h2>
                 <p>{project.services}</p>
-               
               </div>
             </div>
           ))}
         </div>
       </div>
-      
       <button className='landing_02-morework-button'>More Work</button>
-
-
     </>
   );
 }
