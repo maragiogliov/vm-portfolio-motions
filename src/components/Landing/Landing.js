@@ -119,6 +119,13 @@ const Landing = () => {
           <div> Designer & Developer </div>
         </section>
         <section className="container-globo">
+          <div className='globo-text-container'>
+
+            <div className='container-globo-text'>Located </div>
+            <div className='container-globo-text'>in the UK</div>
+          </div>
+
+
           <svg className="globe" viewBox="0 0 100 100">
             <circle className="wireframe" cx="50" cy="50" r="48"></circle>
             <ellipse className="wireframe" cx="50" cy="50" rx="48" ry="24"></ellipse>
