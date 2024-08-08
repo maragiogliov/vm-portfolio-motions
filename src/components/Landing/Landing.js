@@ -4,8 +4,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import horizontalLoop from '../../assets/seamless-scroll';
 import './landing.css';
 import Header from '../Header/Header';
-import Landing_01 from '../Landing_01/Landing_01';
-import Landing_02 from '../Landing_02/Landing_02';
+import HeroIMG from '../../assets/HERO-IMG.jpg';
+import LandingOne from '../LandingOne/LandingOne';
+import LandingTwo from '../LandingTwo/LandingTwo';
 import Footer from '../Footer/Footer';
 
 
@@ -18,7 +19,7 @@ const Landing = () => {
 
   useEffect(() => {
     const boxes = boxesRef.current;
-    const colors = ['#f5f5f5'];
+    const colors = ['transparent'];
 
     // Horizontal loop animation initialization
     if (boxes.length > 0) {
@@ -29,26 +30,6 @@ const Landing = () => {
       horizontalLoop(boxes, { paused: false, repeat: -1, speed: 0.8 });
     }
 
-    // GSAP animation with ScrollTrigger
-    gsap.fromTo(
-      boxes,
-      {
-        opacity: 0,
-        y: 20,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        stagger: 0.2,
-        duration: 1,
-        scrollTrigger: {
-          trigger: wrapperRef.current,
-          start: 'top 80%',
-          end: 'bottom 20%',
-          scrub: true,
-        },
-      }
-    );
 
     // Ensure cleanup of animations when component unmounts
     return () => {
@@ -64,7 +45,7 @@ const Landing = () => {
 
   return (
     <>
-    
+    <img className='landing-headshot-image' src={HeroIMG}alt='dennis-image'></img>
     <section className="landing-container" ref={landingRef}>
       <Header />
       <div className="wrapper" ref={wrapperRef}>
@@ -115,8 +96,8 @@ const Landing = () => {
               fill="black"
             />
           </svg>
-          <div> Freelance </div>
-          <div> Designer & Developer </div>
+          <div className='landing-profession-text'> Freelance </div>
+          <div className='landing-profession-text'> Designer & Developer </div>
         </section>
         <section className="container-globo">
           <div className='globo-text-container'>
@@ -183,8 +164,8 @@ const Landing = () => {
         </section>
       </section>
     </section>
-    <Landing_01 />
-    <Landing_02 />
+    <LandingOne />
+    <LandingTwo />
     <Footer />
 
     </>

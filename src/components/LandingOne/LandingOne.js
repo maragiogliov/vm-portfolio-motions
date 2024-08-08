@@ -1,7 +1,7 @@
 import React from 'react';
 import './Landing_01.css';
 
-export const Landing_01 = () => {
+export const LandingOne = () => {
   return (
     <>
 
@@ -34,4 +34,4 @@ export const Landing_01 = () => {
   )
 }
 
-export default Landing_01;
+export default LandingOne;

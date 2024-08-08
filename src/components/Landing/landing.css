@@ -1,6 +1,14 @@
 
 /*Mobile*/
-
+.landing-headshot-image{
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 70%;
+  height: 100vh;
+  object-fit: cover;
+  
+}
 .landing-container {
   opacity: 0; /* Initially hide the landing content */
   height: 105vh;
@@ -68,6 +76,9 @@
   width: 100px;
   height: 50%;
 }
+.globo-text-container{
+  display: none;
+}
 @keyframes rotate {
   from {
       transform: rotateY(0deg);
@@ -81,6 +92,7 @@
   fill: none;
   stroke-width: .5;
 }
+
 
 /*Desktop*/
 
@@ -99,7 +111,6 @@
     justify-content: space-around;
   
   }
-
   .globe {
     background-color: #f5f5f5;
     padding: 1rem;
@@ -117,7 +128,6 @@
     font-size: 1vw;
     color: #f5f5f5;
   }
-  
   .label-text{
 
     top: 35vh; 
@@ -125,6 +135,9 @@
     width: 90%;
     left: 0rem;
 
+  }
+  .landing-profession-text{
+    font-size: 2vw;
   }
   .wrapper {
   
